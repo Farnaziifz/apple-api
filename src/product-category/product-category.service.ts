@@ -24,4 +24,22 @@ export class ProductCategoryService {
     );
     return newCategory.save();
   }
+
+  async deleteProductCat(catId): Promise<any> {
+    const deleteCat = await this.ProductCategoryModel.findByIdAndRemove(catId);
+    return deleteCat;
+  }
+
+  async updateCat(
+    catId,
+    createProductCategoryDTO: CreateProductCategoryDTO,
+  ): Promise<ProductCategory> {
+    const updateCat = await this.ProductCategoryModel.findByIdAndUpdate(
+      catId,
+      createProductCategoryDTO,
+      { new: true },
+    );
+
+    return updateCat;
+  }
 }
