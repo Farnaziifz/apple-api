@@ -26,4 +26,23 @@ export class ProductSubCategoryService {
     );
     return newSubCat.save();
   }
+
+  async deleteProductCat(catId): Promise<any> {
+    const deleteCat = await this.ProductSubCategoryModel.findByIdAndRemove(
+      catId,
+    );
+    return deleteCat;
+  }
+  async updateCat(
+    catId,
+    createProductCategoryDTO: CreateProductSubCategoryDTO,
+  ): Promise<ProductSubCategory> {
+    const updateCat = await this.ProductSubCategoryModel.findByIdAndUpdate(
+      catId,
+      createProductCategoryDTO,
+      { new: true },
+    );
+
+    return updateCat;
+  }
 }

@@ -29,4 +29,21 @@ export class ProductService {
     const productSingle = await this.ProductModel.findById(id).exec();
     return productSingle;
   }
+  async deleteProduct(id): Promise<any> {
+    const deleteProduct = await this.ProductModel.findByIdAndRemove(id);
+    return deleteProduct;
+  }
+
+  async updateProduct(
+    id,
+    createProductDTO: CreateProductDTO,
+  ): Promise<Product> {
+    const updateProduct = await this.ProductModel.findByIdAndUpdate(
+      id,
+      createProductDTO,
+      { new: true },
+    );
+
+    return updateProduct;
+  }
 }

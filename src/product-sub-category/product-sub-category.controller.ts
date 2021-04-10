@@ -7,6 +7,8 @@ import {
   Res,
   HttpStatus,
   NotFoundException,
+  Put,
+  Delete,
 } from '@nestjs/common';
 import { ProductSubCategoryService } from './product-sub-category.service';
 import { CreateProductSubCategoryDTO } from './dto/create-product-sub-category.dto';
@@ -36,6 +38,33 @@ export class ProductSubCategoryController {
       statusCode: 200,
       message: 'sub category added succefuly',
       newSubCat,
+    });
+  }
+
+  @Delete('/delete/:id')
+  async deleteCat(@Res() res, @Param('id') id) {
+    const Cat = await this.productSubCategoryService.deleteProductCat(id);
+    if (!Cat) throw new NotFoundException('Category does not exist');
+    return res.status(HttpStatus.OK).json({
+      message: 'Catgeory has been deleted',
+      Cat,
+    });
+  }
+
+  @Put('/update/:id')
+  async updateBlog(
+    @Res() res,
+    @Param('id') id,
+    @Body() createProductSubCategoryDTO: CreateProductSubCategoryDTO,
+  ) {
+    const cat = await this.productSubCategoryService.updateCat(
+      id,
+      createProductSubCategoryDTO,
+    );
+    if (!cat) throw new NotFoundException('Category does not exist!');
+    return res.status(HttpStatus.OK).json({
+      message: 'Category has been successfully updated',
+      cat,
     });
   }
 }
