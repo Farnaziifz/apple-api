@@ -41,6 +41,7 @@ export class HomeSliderController {
     const slider = await this.homeSliderService.deleteSlider(id);
     if (!slider) throw new NotFoundException('slider does not exist');
     return res.status(HttpStatus.OK).json({
+      statusCode: 200,
       message: 'slider has been deleted',
       slider,
     });

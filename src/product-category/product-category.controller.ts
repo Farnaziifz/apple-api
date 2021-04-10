@@ -43,6 +43,7 @@ export class ProductCategoryController {
     const Cat = await this.productCategoryService.deleteProductCat(id);
     if (!Cat) throw new NotFoundException('Category does not exist');
     return res.status(HttpStatus.OK).json({
+      statusCode: 200,
       message: 'Catgeory has been deleted',
       Cat,
     });

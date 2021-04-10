@@ -54,6 +54,7 @@ export class ProductController {
     const product = await this.productService.deleteProduct(id);
     if (!product) throw new NotFoundException('product does not exist');
     return res.status(HttpStatus.OK).json({
+      statusCode: 200,
       message: 'product has been deleted',
       product,
     });
