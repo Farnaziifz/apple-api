@@ -20,7 +20,7 @@ export class BlogController {
   @Get()
   async getAllBlogs(@Res() res) {
     const blogs = await this.blogService.getAllBlogs();
-    return res.status(HttpStatus.OK).json(blogs);
+    return res.status(HttpStatus.OK).json({ statusCode: 200, blogs });
   }
 
   @Post('create')

@@ -25,4 +25,13 @@ export class BlogTagService {
     const blog = await this.BlogTagModel.findById(id).exec();
     return blog;
   }
+  async updateTag(id, createBlogTagDTO: CreateBlogTagDTO): Promise<BlogTag> {
+    const updateTag = await this.BlogTagModel.findByIdAndUpdate(
+      id,
+      createBlogTagDTO,
+      { new: true },
+    );
+
+    return updateTag;
+  }
 }

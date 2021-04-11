@@ -34,6 +34,7 @@ export class AppController {
   )
   async uploadedFile(@UploadedFile() file) {
     const response = {
+      statusCode: 200,
       originalname: file.originalname,
       filename: file.filename,
     };

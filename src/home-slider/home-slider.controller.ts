@@ -19,7 +19,7 @@ export class HomeSliderController {
   @Get()
   async getAllSlider(@Res() res) {
     const slider = await this.homeSliderService.getAllSlider();
-    return res.status(HttpStatus.OK).json(slider);
+    return res.status(HttpStatus.OK).json({ statusCode: 200, slider });
   }
   @Post('create')
   async createSlider(

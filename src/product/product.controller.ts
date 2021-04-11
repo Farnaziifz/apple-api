@@ -21,7 +21,7 @@ export class ProductController {
   async getProductBySub(@Res() res, @Param('id') id) {
     const productBySub = await this.productService.getProductByCat(id);
     if (!productBySub) throw new NotFoundException('no sub category');
-    return res.status(HttpStatus.OK).json(productBySub);
+    return res.status(HttpStatus.OK).json({ statusCode: 200, productBySub });
   }
 
   @Get()

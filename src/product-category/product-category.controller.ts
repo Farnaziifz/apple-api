@@ -20,7 +20,7 @@ export class ProductCategoryController {
   @Get()
   async getAllProductCategory(@Res() res) {
     const productCategory = await this.productCategoryService.getAllProductCategory();
-    return res.status(HttpStatus.OK).json(productCategory);
+    return res.status(HttpStatus.OK).json({ statusCode: 200, productCategory });
   }
 
   @Post('create')

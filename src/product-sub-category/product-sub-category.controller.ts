@@ -23,7 +23,7 @@ export class ProductSubCategoryController {
       id,
     );
     if (!subCategory) throw new NotFoundException('no sub category');
-    return res.status(HttpStatus.OK).json(subCategory);
+    return res.status(HttpStatus.OK).json({ statusCode: 200, subCategory });
   }
 
   @Post('create')
