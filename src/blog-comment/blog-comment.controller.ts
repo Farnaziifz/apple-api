@@ -33,7 +33,7 @@ export class BlogCommentController {
     );
     return res.status(HttpStatus.OK).json({
       statusCode: 200,
-      message: 'blgo comment added succefuly',
+      message: 'blog comment added succefuly',
       blgocm,
     });
   }

@@ -19,7 +19,7 @@ export class DailyController {
   @Get()
   async getAllDaily(@Res() res) {
     const daily = await this.dailyService.getAllDaily();
-    return res.status(HttpStatus.OK).json(daily);
+    return res.status(HttpStatus.OK).json({ statusCode: 200, daily });
   }
 
   @Post('create')
@@ -37,7 +37,7 @@ export class DailyController {
   async getDaily(@Res() res, @Param('id') id) {
     const blog = await this.dailyService.getDailyById(id);
     if (!blog) throw new NotFoundException('Blog does not exist!');
-    return res.status(HttpStatus.OK).json(blog);
+    return res.status(HttpStatus.OK).json({ statusCode: 200, blog });
   }
 
   @Put('/update/:id')

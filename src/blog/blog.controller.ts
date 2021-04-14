@@ -50,6 +50,7 @@ export class BlogController {
     const blog = await this.blogService.updateBlog(id, createBlogDTO);
     if (!blog) throw new NotFoundException('Blog does not exist!');
     return res.status(HttpStatus.OK).json({
+      statusCode: 200,
       message: 'Blog has been successfully updated',
       blog,
     });
@@ -60,6 +61,7 @@ export class BlogController {
     const blog = await this.blogService.deleteBlog(id);
     if (!blog) throw new NotFoundException('Blog does not exist');
     return res.status(HttpStatus.OK).json({
+      statusCode: 200,
       message: 'Blog has been deleted',
       blog,
     });
