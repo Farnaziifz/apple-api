@@ -61,6 +61,7 @@ export class ProductCategoryController {
     );
     if (!cat) throw new NotFoundException('Category does not exist!');
     return res.status(HttpStatus.OK).json({
+      statusCode: 200,
       message: 'Category has been successfully updated',
       cat,
     });

@@ -49,6 +49,7 @@ export class DailyController {
     const daily = await this.dailyService.updateDaily(id, createDailyDTO);
     if (!daily) throw new NotFoundException('daily does not exist!');
     return res.status(HttpStatus.OK).json({
+      statusCode: 200,
       message: 'tag has been successfully updated',
       daily,
     });

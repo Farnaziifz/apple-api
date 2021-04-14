@@ -52,6 +52,7 @@ export class BlogTagController {
     const tag = await this.blogTagService.updateTag(id, createBlogTagDTO);
     if (!tag) throw new NotFoundException('tag does not exist!');
     return res.status(HttpStatus.OK).json({
+      statusCode: 200,
       message: 'tag has been successfully updated',
       tag,
     });

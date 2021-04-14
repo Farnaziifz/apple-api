@@ -72,6 +72,7 @@ export class ProductController {
     );
     if (!product) throw new NotFoundException('product does not exist!');
     return res.status(HttpStatus.OK).json({
+      statusCode: 200,
       message: 'product has been successfully updated',
       product,
     });
