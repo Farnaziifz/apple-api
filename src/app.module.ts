@@ -10,6 +10,7 @@ import { MulterModule } from '@nestjs/platform-express';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { DailyModule } from './daily/daily.module';
+import { BlogCommentModule } from './blog-comment/blog-comment.module';
 
 @Module({
   imports: [
@@ -26,6 +27,7 @@ import { DailyModule } from './daily/daily.module';
     ProductModule,
     HomeSliderModule,
     DailyModule,
+    BlogCommentModule,
   ],
   controllers: [AppController],
   providers: [AppService],
