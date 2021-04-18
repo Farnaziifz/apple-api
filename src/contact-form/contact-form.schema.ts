@@ -5,4 +5,5 @@ export const ContactFormSchema = new mongoose.Schema({
   phone: Number,
   subject: String,
   message: String,
+  status: Boolean,
 });

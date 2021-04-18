@@ -3,4 +3,5 @@ export class CreateContactFormDTO {
   readonly phone: number;
   readonly subject: string;
   readonly message: string;
+  readonly status: boolean;
 }
