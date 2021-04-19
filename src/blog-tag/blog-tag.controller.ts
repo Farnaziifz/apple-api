@@ -39,8 +39,8 @@ export class BlogTagController {
   @Get('/:id')
   async getBlogTag(@Res() res, @Param('id') id) {
     const blog = await this.blogTagService.getBlogTagById(id);
-    if (!blog) throw new NotFoundException('Blog does not exist!');
-    return res.status(HttpStatus.OK).json(blog);
+    if (!blog) throw new NotFoundException('Blog tag does not exist!');
+    return res.status(HttpStatus.OK).json({ statusCode: 200, blog });
   }
 
   @Put('/update/:id')

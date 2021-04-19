@@ -6,4 +6,5 @@ export interface BlogComment extends Document {
   readonly subject: string;
   readonly message: string;
   readonly status: boolean;
+  readonly blog_id: string;
 }

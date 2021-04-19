@@ -23,6 +23,12 @@ export class BlogCommentController {
     return res.status(HttpStatus.OK).json({ statusCode: 200, blogCm });
   }
 
+  @Get('comment/:id')
+  async getBlogByd(@Res() res, @Param('id') id) {
+    const commnet = await this.blogCommentService.getBlogCommentById(id);
+    res.status(HttpStatus.OK).json({ statusCode: 200, commnet });
+  }
+
   @Post('create')
   async createProductCategory(
     @Res() res,

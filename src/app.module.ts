@@ -12,6 +12,7 @@ import { AppService } from './app.service';
 import { DailyModule } from './daily/daily.module';
 import { BlogCommentModule } from './blog-comment/blog-comment.module';
 import { ContactFormModule } from './contact-form/contact-form.module';
+import { BlogCategoryModule } from './blog-category/blog-category.module';
 
 @Module({
   imports: [
@@ -30,6 +31,7 @@ import { ContactFormModule } from './contact-form/contact-form.module';
     DailyModule,
     BlogCommentModule,
     ContactFormModule,
+    BlogCategoryModule,
   ],
   controllers: [AppController],
   providers: [AppService],

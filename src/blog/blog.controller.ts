@@ -38,7 +38,7 @@ export class BlogController {
   async getBlog(@Res() res, @Param('id') id) {
     const blog = await this.blogService.getBlogById(id);
     if (!blog) throw new NotFoundException('Blog does not exist!');
-    return res.status(HttpStatus.OK).json(blog);
+    return res.status(HttpStatus.OK).json({ statusCode: 200, blog });
   }
 
   @Put('/update/:id')

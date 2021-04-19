@@ -16,6 +16,13 @@ export class BlogCommentService {
     return blogCm;
   }
 
+  async getBlogCommentById(id): Promise<BlogComment[]> {
+    const comment = await this.BlogCommentModel.find({
+      blog_id: id,
+    });
+    return comment;
+  }
+
   async createBlogTag(
     createBlogCommentDTO: CreateBlogCommentDTO,
   ): Promise<BlogComment> {

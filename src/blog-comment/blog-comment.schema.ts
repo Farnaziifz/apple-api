@@ -6,4 +6,5 @@ export const BlogCommentSchema = new mongoose.Schema({
   subject: String,
   message: String,
   status: Boolean,
+  blog_id: String,
 });
