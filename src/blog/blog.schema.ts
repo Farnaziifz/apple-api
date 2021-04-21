@@ -5,4 +5,6 @@ export const BlogSchema = new mongoose.Schema({
   description: String,
   tags: Array,
   synopsis: String,
+  category_id: String,
+  category_name: String,
 });

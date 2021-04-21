@@ -38,4 +38,8 @@ export class BlogService {
     const deleteBlog = await this.blogModel.findByIdAndRemove(blogID);
     return deleteBlog;
   }
+  async getBlogByCat(id): Promise<Blog[]> {
+    const blogs = await this.blogModel.find({ category_id: id });
+    return blogs;
+  }
 }

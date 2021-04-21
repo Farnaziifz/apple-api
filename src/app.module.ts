@@ -12,7 +12,8 @@ import { AppService } from './app.service';
 import { DailyModule } from './daily/daily.module';
 import { BlogCommentModule } from './blog-comment/blog-comment.module';
 import { ContactFormModule } from './contact-form/contact-form.module';
-import { BlogCategoryModule } from './blog-category/blog-category.module';
+import { BlogCategoriesModule } from './blog-categories/blog-categories.module';
+import { ProductSliderModule } from './product-slider/product-slider.module';
 
 @Module({
   imports: [
@@ -31,7 +32,8 @@ import { BlogCategoryModule } from './blog-category/blog-category.module';
     DailyModule,
     BlogCommentModule,
     ContactFormModule,
-    BlogCategoryModule,
+    BlogCategoriesModule,
+    ProductSliderModule,
   ],
   controllers: [AppController],
   providers: [AppService],

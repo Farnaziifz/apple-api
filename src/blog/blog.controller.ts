@@ -66,4 +66,11 @@ export class BlogController {
       blog,
     });
   }
+
+  @Get('byCat/:id')
+  async getBlogByCat(@Res() res, @Param('id') id) {
+    const blogs = await this.blogService.getBlogByCat(id);
+    if (!blogs) throw new NotFoundException('no blogs');
+    return res.status(HttpStatus.OK).json({ statusCode: 200, blogs });
+  }
 }
