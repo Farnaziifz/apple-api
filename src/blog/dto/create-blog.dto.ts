@@ -5,4 +5,5 @@ export class CreateBlogDTO {
   readonly synopsis: string;
   readonly category_id: string;
   readonly category_name: string;
+  readonly image: string;
 }

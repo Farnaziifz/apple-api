@@ -7,4 +7,5 @@ export const BlogSchema = new mongoose.Schema({
   synopsis: String,
   category_id: String,
   category_name: String,
+  image: String,
 });
