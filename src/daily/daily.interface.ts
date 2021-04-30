@@ -5,4 +5,6 @@ export interface Daily extends Document {
   readonly price: number;
   readonly image: string;
   readonly description: string;
+  readonly details: string[];
+  readonly status: boolean;
 }

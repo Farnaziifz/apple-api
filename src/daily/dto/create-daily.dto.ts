@@ -3,4 +3,6 @@ export class CreateDailyDTO {
   readonly price: number;
   readonly image: string;
   readonly description: string;
+  readonly details: string[];
+  readonly status: boolean;
 }
