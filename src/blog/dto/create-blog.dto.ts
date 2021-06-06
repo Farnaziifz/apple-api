@@ -7,3 +7,4 @@ export class CreateBlogDTO {
   readonly category_name: string;
   readonly image: string;
 }
+// hi
